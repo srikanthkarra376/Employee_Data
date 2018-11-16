@@ -1,11 +1,11 @@
 function UserInfo() {
-  var xhttp = new XMLHttpRequest();
+  const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         const UsersArray =JSON.parse(this.responseText);
         localStorage.setItem("employerList", JSON.stringify(UsersArray));
         UsersArray.forEach(User => {
-        let output = `<tr> 
+        const output = `<tr> 
                      <td>${User.firstname},${User.lastname} </td>
                      <td>${User.email} </td>
                      <td>${2018-User.birthdate} </td>

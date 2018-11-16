@@ -1,7 +1,7 @@
 function showInfo() {
   const data = JSON.parse(localStorage.getItem("employerList"));
   const  obj = getUrlVars();
-  for(var i=0;i<data.length;i++){
+  for(let i=0;i<data.length;i++){
     if(data[i].id == obj.id){
 
       const output =`<div class="info">
@@ -24,8 +24,8 @@ function showInfo() {
   }
 }
 function getUrlVars() {
-  var vars = {} ;
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+  const vars = {} ;
+  const parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
       vars[key] = value;
   });
   return vars;
