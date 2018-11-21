@@ -1,9 +1,9 @@
 function showInfo() {
   const data = JSON.parse(localStorage.getItem("employerList"));
-  const  obj = getUrlVars();
+  const  obj = getUrlParams();
   for(let i=0;i<data.length;i++){
     if(data[i].id == obj.id){
-
+  
       const output =`<div class="info">
                     <div>
                     <img  src="./images/user_${data[i].id}.jpg">
@@ -22,11 +22,12 @@ function showInfo() {
     }
 
   }
-}
-function getUrlVars() {
-  const vars = {} ;
-  const parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-      vars[key] = value;
+};
+function getUrlParams() {
+  const urlParams = {} ;
+  const parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,(m,key,value)=> {
+    urlParams[key] = value;
   });
-  return vars;
+  return urlParams;
 }
+

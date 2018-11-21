@@ -15,6 +15,7 @@ td, th {
 th img {
   padding-top:-50px;
   padding-left:4px;
+  cursor: pointer;
 }
 th {
   background-color: #fff;
