@@ -11,6 +11,10 @@ table {
 td, th {
   text-align: center;
   padding: 8px;
+  
+}
+th {
+  cursor: pointer;
 }
 th img {
   padding-top:-50px;

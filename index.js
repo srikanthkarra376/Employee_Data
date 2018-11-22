@@ -22,14 +22,21 @@ function UserInfo() {
 
 //SortTable
 
+const ths = document.getElementsByTagName("TH");
+  for(let i=0;i<ths.length;i++){
+   ths[i].addEventListener("click",function(){
+   sortTable(i);
+   })
+  };
+  
 function sortTable(column) {
-  let table, rows, switching, i, x, y, shouldSwitch;
+ var table, rows, switching, i,x, y, shouldSwitch;
   table = document.getElementById("myTable");
   switching = true;
  while (switching) {
     switching = false;
     rows = table.rows;
-    for (i = 1; i < (rows.length - 1); i++) {
+    for ( i = 1; i < (rows.length - 1); i++) {
         shouldSwitch = false;
       x = rows[i].getElementsByTagName("TD")[column];
       y = rows[i + 1].getElementsByTagName("TD")[column];
@@ -44,3 +51,4 @@ function sortTable(column) {
     }
   }
 }
+
